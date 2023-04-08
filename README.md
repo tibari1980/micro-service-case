@@ -1,6 +1,7 @@
+# Techno SPRING BOOT BY TIBARI ZEROUAL
 # Mini-Projet-Java-Springboot
-#Objectif
-L'objectif de ce mini projet  est de créer une application Resful Web Service à l'aide de Spring boot.
+# Objectif Application
+ L'objectifi de  ce mini projet  est de créer une application Resful Web Service à l'aide de Spring boot.
 Ce mini projet ayant  les les fonctionnalités CRUD :CREATE ,READ, UPDATE ,DELETE
 #But Gerer Les CASES 
 # STEP :
