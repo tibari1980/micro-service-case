@@ -6,6 +6,7 @@ import java.time.Instant;
 import org.apache.commons.lang.StringUtils;
 
 import com.arcesi.gestioncase.entities.Case;
+import com.arcesi.gestioncase.exceptions.InvalidEntityException;
 import com.arcesi.gestioncase.requestDtos.CaseRequest;
 import com.arcesi.gestioncase.responsedtos.CaseResponse;
 
@@ -52,8 +53,7 @@ public class CaseDTO implements Serializable{
 	 */
 	public static Case toEntity(CaseDTO dto) {
 		if (dto == null) {
-			//throw new InvalidEntityException(IConstanteMessageErrors.USER_NOT_VALIDE.getIdMessage());
-			
+			throw new InvalidEntityException("Case not valid");
 		}
 		return 	 Case.builder()
 				.caseId(dto.getCaseId())
@@ -75,7 +75,7 @@ public class CaseDTO implements Serializable{
 	 */
 	public static CaseDTO fromBean(Case bean) {
 		if (bean == null) {
-			//throw new InvalidEntityException(IConstanteMessageErrors.USER_NOT_VALIDE.getIdMessage());
+			throw new InvalidEntityException("Case not valid");
 		}
 		return CaseDTO.builder()
 				.caseId(bean.getCaseId())
@@ -97,7 +97,7 @@ public class CaseDTO implements Serializable{
 	 */
 	public static CaseDTO CaseRequestToCaseDTO(CaseRequest request) {
 		if (request == null) {
-			//throw new InvalidEntityException(IConstanteMessageErrors.USER_NOT_VALIDE.getIdMessage());
+			throw new InvalidEntityException("Case note valid");
 		}
 		return CaseDTO.builder()
 				.title(StringUtils.isNotEmpty(request.getTitle()) ? request.getTitle().toUpperCase() : null)
@@ -114,7 +114,7 @@ public class CaseDTO implements Serializable{
 	 */
 	public static CaseResponse CaseDTOToCaseResponse(CaseDTO dto) {
 		if (dto == null) {
-			//throw new InvalidEntityException(IConstanteMessageErrors.USER_NOT_VALIDE.getIdMessage());
+			throw new InvalidEntityException("Case not valid");
 		}
 		return CaseResponse.builder()
 				.caseIdUnique(dto.getCaseIdUnique())
